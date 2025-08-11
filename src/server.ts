@@ -51,6 +51,24 @@ export const getServer = (): McpServer => {
     },
   );
 
+  server.tool("log-info", "A simple tool that logs an info message", () => {
+    console.log("This is an info log");
+    console.info("This is another info log");
+
+    return {
+      content: [{ type: "text", text: "Log successfully printed" }],
+    };
+  });
+
+  server.tool("log-error", "A simple tool that logs an error message", () => {
+    console.warn("This is a warning log");
+    console.error("This is an error log");
+
+    return {
+      content: [{ type: "text", text: "Log successfully printed" }],
+    };
+  });
+
   server.resource(
     "greeting-resource",
     "https://example.com/greetings/default",
