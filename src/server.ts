@@ -69,6 +69,44 @@ export const getServer = (): McpServer => {
     };
   });
 
+  server.tool("log-debug", "A simple tool that logs a debug message", () => {
+    console.log("[debug] This is a message");
+    console.log("This is a debug log");
+
+    return {
+      content: [{ type: "text", text: "Log successfully printed" }],
+    };
+  });
+
+  server.tool("log-warning", "A simple tool that logs a warning message", () => {
+    console.log("[warn] This is a message");
+    console.log("This is another warning log");
+
+    return {
+      content: [{ type: "text", text: "Log successfully printed" }],
+    };
+  });
+
+  server.tool("log-all", "A simple tool that logs messages of all types", () => {
+    console.log("[warn] This is a message");
+    console.log("[debug] This is another message");
+    console.log("this is a regular message");
+    console.error("this is an error message");
+
+    return {
+      content: [{ type: "text", text: "Log successfully printed" }],
+    };
+  });
+
+  server.tool("log-json", "A simple tool that logs a JSON", () => {
+    console.log("[warn] This is a JSON:", JSON.stringify({ foo: "bar", yolo: { swag: 42 } }));
+    console.log("[warn] This is another JSON:", JSON.stringify({ foo: "bar", yolo: { swag: 42 } }, null, 2));
+
+    return {
+      content: [{ type: "text", text: "Log successfully printed" }],
+    };
+  });
+
   server.resource(
     "greeting-resource",
     "https://example.com/greetings/default",
