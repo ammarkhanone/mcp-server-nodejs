@@ -25,6 +25,12 @@ cd mcp-server-template
 npm install
 ```
 
+3. Create environment file:
+
+```bash
+touch .env
+```
+
 ## Usage
 
 ### Development
