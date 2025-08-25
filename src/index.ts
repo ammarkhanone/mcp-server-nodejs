@@ -30,7 +30,7 @@ app.post("/mcp", async (req: Request, res: Response) => {
             code: -32700,
             message: "MCP Protocol Error",
           },
-          id: null,
+          id: 1,
         }),
       );
       return;
