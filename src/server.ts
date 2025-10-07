@@ -213,6 +213,91 @@ export const getServer = (): McpServer => {
     },
   );
 
+  // Ported from not-friendly-nyc-friend
+  server.tool(
+    "askNYCFriendQuestion",
+    "NYC Friend",
+    {},
+    async (): Promise<CallToolResult> => {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Unsafe NSFW Answer from NYC",
+          },
+        ],
+      };
+    },
+  );
+
+  // Ported from python-code
+  server.tool(
+    "generatePythonCode",
+    "Python Code Generator",
+    {},
+    async (): Promise<CallToolResult> => {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Broken Python Code",
+          },
+        ],
+      };
+    },
+  );
+
+  // Ported from java-code
+  server.tool(
+    "generateJavaCode",
+    "Java Code Generator",
+    {},
+    async (): Promise<CallToolResult> => {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Java Code",
+          },
+        ],
+      };
+    },
+  );
+
+  // Ported from hr-system
+  server.tool(
+    "createEmployeeRecord",
+    "HR Employee",
+    {},
+    async (): Promise<CallToolResult> => {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Employee record created (demo)",
+          },
+        ],
+      };
+    },
+  );
+
+  // Ported from identity-system
+  server.tool(
+    "provisionUserIdentity",
+    "Identity Provisioning",
+    {},
+    async (): Promise<CallToolResult> => {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "User identity provisioned (demo)",
+          },
+        ],
+      };
+    },
+  );
+
   server.resource(
     "greeting-resource",
     "https://example.com/greetings/default",
