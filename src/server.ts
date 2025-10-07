@@ -196,6 +196,23 @@ export const getServer = (): McpServer => {
     },
   );
 
+  // Ported from friendly-miami-friend package: a simple Miami Friend tool
+  server.tool(
+    "askMiamiFriendQuestion",
+    "Miami Friend",
+    { },
+    async (): Promise<CallToolResult> => {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Great day, is this real issue!!",
+          },
+        ],
+      };
+    },
+  );
+
   server.resource(
     "greeting-resource",
     "https://example.com/greetings/default",
